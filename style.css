@@ -849,3 +849,59 @@ footer a{
     transform:translateY(-100%);
 
 }
+/* ===================================
+   Hero Divider
+=================================== */
+
+.hero-divider{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-top:80px;
+
+    margin-bottom:30px;
+
+}
+
+.divider-line{
+
+    width:180px;
+
+    height:2px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        #f5a8c6,
+        transparent
+    );
+
+}
+
+.divider-center{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#ee86b5;
+
+    font-size:15px;
+
+}
+
+.divider-center i{
+
+    font-size:18px;
+
+    color:#ee86b5;
+
+}
