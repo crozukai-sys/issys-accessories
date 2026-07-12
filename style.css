@@ -85,7 +85,7 @@ nav{
 
 .logo img{
 
-    height:80px;
+    height:75px;
 
 }
 
@@ -659,21 +659,51 @@ footer a{
 
     nav{
 
+        position:static;
+
         flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
 
         gap:20px;
 
         padding:20px;
 
+        min-height:auto;
+
+    }
+
+    .logo{
+
+        position:static;
+
+        margin-bottom:15px;
+
+    }
+
+    .logo img{
+
+        height:90px;
+
     }
 
     nav ul{
+
+        display:flex;
 
         flex-wrap:wrap;
 
         justify-content:center;
 
+        align-items:center;
+
         gap:18px;
+
+        margin:0;
+
+        padding:0;
 
     }
 
@@ -714,27 +744,6 @@ footer a{
     .product-card img{
 
         height:280px;
-
-    }
-
-}
-@keyframes floatLogo{
-
-    0%{
-
-        transform:translateY(0px);
-
-    }
-
-    50%{
-
-        transform:translateY(-8px);
-
-    }
-
-    100%{
-
-        transform:translateY(0px);
 
     }
 
