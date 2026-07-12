@@ -5,25 +5,34 @@
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
+
     link.addEventListener("click", function(e) {
+
         e.preventDefault();
 
         const target = document.querySelector(this.getAttribute("href"));
 
-        if (target) {
+        if(target){
+
             target.scrollIntoView({
                 behavior: "smooth"
             });
+
         }
+
     });
+
 });
 
+// ===================================
 // Fade in sections when scrolling
+// ===================================
+
 const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
             entry.target.classList.add("show");
 
@@ -31,8 +40,8 @@ const observer = new IntersectionObserver((entries) => {
 
     });
 
-}, {
-    threshold: 0.15
+},{
+    threshold:0.15
 });
 
 document.querySelectorAll("section").forEach(section => {
@@ -43,76 +52,50 @@ document.querySelectorAll("section").forEach(section => {
 
 });
 
-// Thank-you message for Product Request form
- document.querySelector(".request form");
+// ===================================
+// Footer Copyright Year
+// ===================================
 
-if (requestForm) {
-
-    requestForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        alert("💗 Thank you! Your request has been received.");
-
-        requestForm.reset();
-
-    });
-
-}
-
-// Thank-you message for Feedback form
- document.querySelector(".feedback form");
-
-if (feedbackForm) {
-
-    feedbackForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        alert("🌸 Thank you for your feedback!");
-
-        feedbackForm.reset();
-
-    });
-
-}
-
-// Footer copyright year
 const copyright = document.querySelector(".copyright");
 
-if (copyright) {
+if(copyright){
 
     copyright.innerHTML =
         `© ${new Date().getFullYear()} Issy's Accessories`;
 
 }
-// =============================
+
+// ===================================
 // Formspree AJAX Submit
-// =============================
+// ===================================
 
-async function submitForm(form, successMessage) {
+async function submitForm(form, successMessage){
 
-    form.addEventListener("submit", async function(e) {
+    form.addEventListener("submit", async function(e){
 
         e.preventDefault();
 
         const data = new FormData(form);
 
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: {
-                Accept: "application/json"
+        const response = await fetch(form.action,{
+
+            method:"POST",
+
+            body:data,
+
+            headers:{
+                Accept:"application/json"
             }
+
         });
 
-        if (response.ok) {
+        if(response.ok){
 
             alert(successMessage);
 
             form.reset();
 
-        } else {
+        }else{
 
             alert("Something went wrong. Please try again.");
 
@@ -143,3 +126,46 @@ if(feedbackForm){
     );
 
 }
+
+// ===================================
+// Hide Header on Scroll
+// ===================================
+
+let lastScrollTop = 0;
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop;
+
+    // Keep header visible near the top
+    if(scrollTop < 100){
+
+        header.classList.remove("header-hidden");
+
+        lastScrollTop = scrollTop;
+
+        return;
+
+    }
+
+    // Scrolling down
+    if(scrollTop > lastScrollTop){
+
+        header.classList.add("header-hidden");
+
+    }
+
+    // Scrolling up
+    else{
+
+        header.classList.remove("header-hidden");
+
+    }
+
+    lastScrollTop = scrollTop;
+
+});

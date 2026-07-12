@@ -53,6 +53,8 @@ header{
 
     box-shadow:0 3px 20px rgba(0,0,0,.05);
 
+    transition:transform .35s ease;
+
 }
 
 nav{
@@ -838,5 +840,12 @@ footer a{
     color:#666;
 
     line-height:1.7;
+
+}
+/* Hide Header */
+
+.header-hidden{
+
+    transform:translateY(-100%);
 
 }
