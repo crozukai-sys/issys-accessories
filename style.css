@@ -61,13 +61,25 @@ nav{
 
     margin:auto;
 
+    position:relative;
+
     display:flex;
 
-    justify-content:space-between;
+    justify-content:center;
 
     align-items:center;
 
     padding:18px 40px;
+
+    min-height:95px;
+
+}
+
+.logo{
+
+    position:absolute;
+
+    left:40px;
 
 }
 
@@ -84,6 +96,14 @@ nav ul{
     gap:35px;
 
     list-style:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0;
+
+    padding:0;
 
 }
 
@@ -132,6 +152,26 @@ nav a:hover{
 .hero-content{
 
     max-width:900px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+.hero-logo{
+
+    width:260px;
+
+    margin-bottom:20px;
+
+    filter:drop-shadow(
+        0 10px 25px
+        rgba(245,169,192,.20)
+    );
+
+    animation:floatLogo 4s ease-in-out infinite;
 
 }
 
@@ -676,5 +716,118 @@ footer a{
         height:280px;
 
     }
+
+}
+@keyframes floatLogo{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+/* ===========================
+   Instagram Feed
+=========================== */
+
+.instagram-feed{
+
+    padding:90px 8%;
+
+    text-align:center;
+
+    background:#fff;
+
+}
+
+.instagram-feed h2{
+
+    font-size:2.6rem;
+
+    color:#ec6ca8;
+
+    margin-bottom:15px;
+
+}
+
+.instagram-feed p{
+
+    color:#777;
+
+    margin-bottom:45px;
+
+}
+
+#curator-feed-default-feed-layout{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+/* ===================================
+   FAQ
+=================================== */
+
+.faq{
+
+    background:#fff8fb;
+
+}
+
+.faq-container{
+
+    max-width:900px;
+
+    margin:50px auto 0;
+
+}
+
+.faq-item{
+
+    background:white;
+
+    border:1px solid #ffe3ee;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 10px 30px rgba(239,143,179,.10);
+
+}
+
+.faq-item h3{
+
+    color:var(--pink);
+
+    margin-bottom:12px;
+
+    font-size:1.2rem;
+
+}
+
+.faq-item p{
+
+    text-align:left;
+
+    color:#666;
+
+    line-height:1.7;
 
 }
