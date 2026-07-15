@@ -169,3 +169,43 @@ window.addEventListener("scroll", () => {
     lastScrollTop = scrollTop;
 
 });
+// ===================================
+// FAQ Accordion
+// ===================================
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+    const icon = item.querySelector("span");
+
+    question.addEventListener("click", () => {
+
+        faqItems.forEach(other => {
+
+            if(other !== item){
+
+                other.querySelector(".faq-answer").style.maxHeight = null;
+                other.querySelector("span").textContent = "+";
+
+            }
+
+        });
+
+        if(answer.style.maxHeight){
+
+            answer.style.maxHeight = null;
+            icon.textContent = "+";
+
+        }else{
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.textContent = "−";
+
+        }
+
+    });
+
+});

@@ -32,7 +32,11 @@ body{
     overflow-x:hidden;
 
 }
+html{
 
+    overflow-x:hidden;
+
+}
 /* ======================
    NAVIGATION
 ====================== */
@@ -186,7 +190,7 @@ nav a:hover{
     color:var(--pink);
 
     margin-bottom:20px;
-
+overflow-wrap:anywhere;
 }
 
 .hero h2{
@@ -659,6 +663,13 @@ footer a{
 
 @media (max-width:900px){
 
+    html,
+    body{
+
+        overflow-x:hidden;
+
+    }
+
     nav{
 
         position:static;
@@ -709,9 +720,29 @@ footer a{
 
     }
 
+    .hero-content{
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow:hidden;
+
+    }
+
+    .hero-logo{
+
+        width:180px;
+
+        max-width:70%;
+
+    }
+
     .hero h1{
 
-        font-size:3.6rem;
+        font-size:2.8rem;
+
+        line-height:1.1;
 
     }
 
@@ -746,6 +777,14 @@ footer a{
     .product-card img{
 
         height:280px;
+
+    }
+
+    .divider-line{
+
+        flex:1;
+
+        max-width:90px;
 
     }
 
@@ -904,4 +943,81 @@ footer a{
 
     color:#ee86b5;
 
+}
+/* ===================================
+   FAQ Accordion
+=================================== */
+
+.faq-question{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    padding:0;
+
+    color:#e98db4;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:1.1rem;
+
+    font-weight:500;
+
+    letter-spacing:.3px;
+
+    text-align:left;
+
+    transition:.3s;
+
+}
+.faq-question{
+
+    transition:color .3s ease, opacity .3s ease;
+
+}
+
+.faq-question:hover{
+
+    color:#000 !important;
+
+}
+
+.faq-question:hover span{
+
+    color:#000 !important;
+
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+}
+
+.faq-answer p{
+
+    padding-top:18px;
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+*{
+    outline:1px solid red;
 }
